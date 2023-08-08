@@ -32,7 +32,7 @@ class LoginController extends Controller
 			return redirect()->back();
 		}
 
-		return redirect()->route('dashboard.data.index');
+		return redirect()->route('customer.list');
 	}
 
 	public function logout()

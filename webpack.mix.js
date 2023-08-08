@@ -16,6 +16,10 @@ let build_scss = [
     {
         from: "/resources/assets/scss/icons.scss",
         to: "/css/icons.css",
+    },
+    {
+        from: "/resources/assets/scss/customers/index.scss",
+        to: "/css/customer.css",
     }
 ];
 
