@@ -22,7 +22,7 @@
                 <div class="col-lg-6">
                     <form method="POST" action="{{ route('customer.store') }}">
                         @csrf
-                        <h3 class="card-title mb-0 text-center">CUSTOMER INFORMATION</h3>
+                        <h3 class="card-title mb-0 text-center">CUSTOMER INFORMATION </h3>
                         <div class="col-12 mb-2">
                             <label for="name" class="form-label">
                                 Name
