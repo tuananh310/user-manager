@@ -4,6 +4,12 @@
 <style>
     .form-control{
         line-height: 1 !important;
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+    }
+    .form-select{
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
     }
 </style>
 @stop
@@ -13,8 +19,8 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <div class="page-title-box d-flex align-items-center justify-content-center pb-3">
-                        <img src="{{ asset('assets/images/chicnchill-logo.png') }}" alt="Logo ChicnChill" class="w-75" />
+                    <div class="page-title-box d-flex align-items-center justify-content-center pb-2">
+                        <img src="{{ asset('assets/images/chicnchill-logo.png') }}" alt="Logo ChicnChill" class="w-50" />
                     </div>
                 </div>
             </div>
@@ -22,7 +28,7 @@
                 <div class="col-lg-6">
                     <form method="POST" action="{{ route('customer.store') }}">
                         @csrf
-                        <h3 class="card-title mb-0 text-center">CUSTOMER INFORMATION </h3>
+                        {{-- <h3 class="card-title mb-0 text-center">CUSTOMER INFORMATION </h3> --}}
                         <div class="col-12 mb-2">
                             <label for="name" class="form-label">
                                 Name
