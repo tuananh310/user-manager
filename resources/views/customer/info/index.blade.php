@@ -5,17 +5,17 @@
 @stop
 
 @section('content')
-    <div class="page-content">
+    <div class="page-content pt-5">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="page-title-box d-flex align-items-center justify-content-center">
                         <img src="{{ asset('assets/images/chicnchill-logo.png') }}" alt="Logo ChicnChill" class="w-75" />
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="card">
                         <form method="POST" action="{{ route('customer.store') }}">
                             @csrf
@@ -115,8 +115,8 @@
                                     <input type="text" name="other_concern" class="form-control" id="other_concern"
                                         value="{{ old('other_concern') }}">
                                 </div>
-                                <div class="col-12 mb-3">
-                                    <button type="submit" class="btn btn-primary w-100">Xác nhận</button>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100">Submit</button>
                                 </div>
                             </div>
                         </form>
