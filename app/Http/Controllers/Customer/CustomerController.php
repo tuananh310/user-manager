@@ -59,6 +59,22 @@ class CustomerController extends Controller
     public function export()
     {
         $customers = Customer::all();
-        return  (new FastExcel($customers))->download('Customer List.xlsx');
+
+        $data = [];
+        foreach($customers as $customer){
+            array_push($data, [
+                'Name' => $customer->name,
+                'Company name' => $customer->company_name,
+                'Company type (Manufacturer/Whosaler/Distributor/Retailer)' => $customer->company_type,
+                'Position' => $customer->position,
+                'Phone number' => $customer->phone,
+                'Email' => $customer->email,
+                'Country' => $customer->country,
+                'Product intersted in' => $customer->product_interested_in,
+                'Other concern' => $customer->other_concern,
+            ]);
+        }
+        $list = collect($data);
+        return  (new FastExcel($list))->download('Customer List.xlsx');
     }
 }
