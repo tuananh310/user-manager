@@ -2,6 +2,7 @@
     <div class="col-md-12">
         <div class="d-flex justify-content-sm-between">
             <h3>Customer List</h3>
+            <a class="btn btn-primary" href="{{route('customer.export')}}">Export Excel</a>
         </div>
         <div class="data-content mt-3">
             <div class="col-sm mb-3">

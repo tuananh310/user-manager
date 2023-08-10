@@ -24,7 +24,8 @@ Route::post('/login', [LoginController::class, 'store'])->name('auth.get.store')
 
 Route::group(['middleware' => ['web', 'auth.login']], function ()
 {
-	Route::get('/customer-list', [CustomerController::class, 'list'])->name('customer.list');
+	Route::get('/list', [CustomerController::class, 'list'])->name('customer.list');
+	Route::get('/export', [CustomerController::class, 'export'])->name('customer.export');
 	//Auth
 	Route::get('/logout', [LoginController::class, 'logout'])->name('auth.get.logout');
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Rap2hpoutre\FastExcel\FastExcel;
 
 class CustomerController extends Controller
 {
@@ -53,5 +54,11 @@ class CustomerController extends Controller
         $data->to = $data->total() < $to ? $data->total() : $to;
 
         return view('customer.list.index', compact('data'));
+    }
+
+    public function export()
+    {
+        $customers = Customer::all();
+        return  (new FastExcel($customers))->download('Customer List.xlsx');
     }
 }

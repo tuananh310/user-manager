@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('name');
             $table->text('company_name');
             $table->text('company_type')->nullable();
-            $table->text('position');
+            $table->text('position')->nullable();
             $table->text('phone');
             $table->text('email');
             $table->text('country');
