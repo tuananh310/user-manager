@@ -34,7 +34,7 @@ class CustomerController extends Controller
     public function list()
     {
         // $records = Customer::all();
-        $rowPerPage = request()->rowPerPage ?? 1;
+        $rowPerPage = request()->rowPerPage ?? 25;
         $data = Customer::query()->orderBy('id', 'asc');
         if (request()->name != null) {
             $data = $data->where('name', 'like', '%' . trim(request()->name) . '%');
