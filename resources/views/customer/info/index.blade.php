@@ -129,7 +129,7 @@
                                 value="{{ old('other_concern') }}">
                         </div>
                         <div class="col-12 mb-2">
-                            <button type="submit" class="btn btn-primary w-100">Xác nhận</button>
+                            <button type="submit" class="btn btn-primary w-100">Confirm</button>
                         </div>
                     </form>
                 </div>
