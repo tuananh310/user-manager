@@ -57,15 +57,15 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         // try {
-            $input = $request->all();
+        $input = $request->all();
 
-            $validator = Validator::make($input, $this->departmentRepo->validateCreate());
-            if ($validator->fails()) {
-                return redirect()->back()->withErrors($validator)->withInput();
-            }
+        $validator = Validator::make($input, $this->departmentRepo->validateCreate());
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
-            $this->departmentRepo->create($input);
-            return redirect()->route('admin.department.index')->with('success', 'Thành công');
+        $this->departmentRepo->create($input);
+        return redirect()->route('admin.department.index')->with('success', 'Thành công');
         // } catch (Exception $ex) {
         //     return back()->withError($ex->getMessage())->withInput();
         // }
@@ -136,6 +136,11 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $this->departmentRepo->destroy($id);
+            return redirect()->route('admin.department.index')->with('success', 'Xóa thành công');
+        } catch (Exception $ex) {
+            return back()->withError($ex->getMessage())->withInput();
+        }
     }
 }

@@ -7,30 +7,30 @@
 @section('content')
     <div class="container-fluid">
         <div class="d-flex justify-content-between align-items-end mb-3">
-            <h4>Tạo mới phòng ban</h4>
+            <h4>Tạo mới vị trí</h4>
         </div>
         <div class="row justify-content-start">
             <div class="col-lg-6">
                 <div class="card">
                     <form class="d-flex" method="POST"
-                        action="{{ route('admin.department.store') }}" enctype="multipart/form-data">
+                        action="{{ route('admin.position.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="card-body">
                             <div class="col-12 mb-3">
                                 <label for="name" class="form-label">
-                                    Tên phòng ban
+                                    Tên vị trí
                                 </label>
                                 <input name="name" type="text" class="form-control" value="{{ old('name') }}"
-                                    placeholder="Nhập tên phòng ban">
+                                    placeholder="Nhập tên vị trí">
                                 {!! $errors->first('name', '<span class="text-danger">:message</span>') !!}
                             </div>
                             <div class="col-12 mb-3">
                                 <label for="parent_id" class="form-label">
-                                    Phòng ban cha
+                                    Cấp trên
                                 </label>
                                 <select name="parent_id" class="form-control" data-placeholder="Select">
-                                    {!! $departments !!}
+                                    {!! $positions !!}
                                 </select>
                                 {!! $errors->first('parent_id', '<span class="text-danger">:message</span>') !!}
                             </div>

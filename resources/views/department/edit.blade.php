@@ -18,7 +18,7 @@
 
                         <div class="card-body">
                             <div class="col-12 mb-3">
-                                <label for="product_interested_in" class="form-label">
+                                <label for="name" class="form-label">
                                     Tên phòng ban
                                 </label>
                                 <input name="name" type="text" class="form-control" value="{{ old('name') ?? $data->name }}"
@@ -26,7 +26,7 @@
                                 {!! $errors->first('name', '<span class="text-danger">:message</span>') !!}
                             </div>
                             <div class="col-12 mb-3">
-                                <label for="product_interested_in" class="form-label">
+                                <label for="parent_id" class="form-label">
                                     Phòng ban cha
                                 </label>
                                 <select name="parent_id" class="form-control" data-placeholder="Select">
@@ -35,7 +35,7 @@
                                 {!! $errors->first('parent_id', '<span class="text-danger">:message</span>') !!}
                             </div>
                             <div class="col-12 mb-3">
-                                <label for="product_interested_in" class="form-label">
+                                <label for="description" class="form-label">
                                     Mô tả
                                 </label>
                                 <textarea name="description" class="form-control" id="ckeditor" rows="3"

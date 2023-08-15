@@ -26,6 +26,12 @@
                         <span data-key="t-overview">Danh sách phòng ban</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{$routeName == 'admin.position.index' ? 'active' : ''}}" href="{{ route('admin.position.index') }}">
+                        {{-- <i class="bi bi-person-bounding-box customer-icon"></i> --}}
+                        <span data-key="t-overview">Danh sách vị trí</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

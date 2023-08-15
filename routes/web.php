@@ -48,10 +48,15 @@ Route::group(['middleware' => ['web', 'auth.login']], function ()
 	Route::post('/department/store', [DepartmentController::class, 'store'])->name('admin.department.store');
 	Route::get('/department/edit/{id}', [DepartmentController::class, 'edit'])->name('admin.department.edit');
 	Route::post('/department/update/{id}', [DepartmentController::class, 'update'])->name('admin.department.update');
-	Route::delete('/department/destroy/{id}', [DepartmentController::class, 'destroy'])->name('admin.department.delete');
+	Route::delete('/department/destroy/{id}', [DepartmentController::class, 'destroy'])->name('admin.department.destroy');
 
     // Position
 	Route::get('/position', [PositionController::class, 'index'])->name('admin.position.index');
+    Route::get('/position/create', [PositionController::class, 'create'])->name('admin.position.create');
+	Route::post('/position/store', [PositionController::class, 'store'])->name('admin.position.store');
+	Route::get('/position/edit/{id}', [PositionController::class, 'edit'])->name('admin.position.edit');
+	Route::post('/position/update/{id}', [PositionController::class, 'update'])->name('admin.position.update');
+	Route::delete('/position/destroy/{id}', [PositionController::class, 'destroy'])->name('admin.position.destroy');
 
     // Role
 	Route::get('/role', [RoleController::class, 'index'])->name('admin.role.index');
