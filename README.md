@@ -1,12 +1,4 @@
-<div align="center">
-  <img src="https://chicnchill.net/wp-content/uploads/2022/09/chicnchill-logo.png" width="300">
-</div>
-<div align="center">
-    <h1>App Dashboard ChicnChill</h1>
-</div>
-
 # Install project
-Run lần lượt các CMD sau:
 ```
     1. composer install
     2. npm install
