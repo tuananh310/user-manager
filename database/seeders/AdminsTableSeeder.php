@@ -13,10 +13,10 @@ class AdminsTableSeeder extends Seeder
         DB::table('users')->delete();
 
         DB::table('users')->insert([
-            'id'         => 1,
-            'name'       => 'ChicnChill',
-            'email'      => 'chicnchill@gmail.com',
-            'password'   => bcrypt('admin123'),
+            'name'       => 'admin',
+            'username'       => 'admin',
+            'email'      => 'admin@gmail.com',
+            'password'   => bcrypt('123456'),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);

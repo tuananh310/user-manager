@@ -22,7 +22,7 @@
         <div class="page-content">
             @yield('content')
         </div>
-        @include('components.footer')
+        {{-- @include('components.footer') --}}
     </div>
 </div>
 @include('components.theme')

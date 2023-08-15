@@ -20,19 +20,19 @@ class LoginController extends Controller
 	public function store()
 	{
 		$this->validate(request(), [
-			'email'    => 'required|email',
+			'username'    => 'required',
 			'password' => 'required',
 		]);
 
 		$remember = request('remember');
 
-		if (! auth()->attempt(request(['email', 'password']), $remember)) {
+		if (! auth()->attempt(request(['username', 'password']), $remember)) {
 			session()->flash('error', 'Incorrect account or password');
 
 			return redirect()->back();
 		}
 
-		return redirect()->route('customer.list');
+		return redirect()->route('admin.dashboard.index');
 	}
 
 	public function logout()

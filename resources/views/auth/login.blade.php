@@ -13,20 +13,17 @@
                         <div class="auth-card mx-lg-3">
                             <div class="card border-0 mb-0">
                                 <div class="card-body">
-                                    <div class="logo text-center mb-2">
-                                        <img src="{{ url('/assets/images/chicnchill-logo.png') }}" alt="" class="img-fluid" width="230">
-                                    </div>
-                                    <p class="text-muted fs-15 text-center">Đăng nhập để tiếp tục với ChicnChill Dashboard</p>
+                                    <h2 class="text-center">Đăng nhập</h2>
                                     <div class="p-2">
 
                                         <form method="POST" action="{{ route('auth.get.store') }}">
                                             @csrf
                                             <div class="mb-3">
-                                                <label for="email" class="form-label">Email</label>
-                                                <input type="email" name="email" class="form-control" id="email" placeholder="Nhập email" value="{{ old('email') }}">
-                                                @if($errors->has('email'))
+                                                <label for="username" class="form-label">Email</label>
+                                                <input type="text" name="username" class="form-control" id="username" placeholder="Nhập username" value="{{ old('username') }}">
+                                                @if($errors->has('username'))
                                                     <div class="invalid-feedback d-block">
-                                                        {{ $errors->first('email') }}
+                                                        {{ $errors->first('username') }}
                                                     </div>
                                                 @endif
                                             </div>
@@ -48,9 +45,6 @@
                                                 <button class="btn btn-primary w-100" type="submit">ĐĂNG NHẬP</button>
                                             </div>
                                         </form>
-                                        <div class="mt-3">
-                                            <i class="bi bi-arrow-left d-inline-block mr-1"></i> Đi tới <a href="https://chicnchill.net/">ChicnChill</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -58,20 +52,6 @@
                     </div>
                 </div>
             </div>
-
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <p class="mb-0 text-muted">©
-                                    <script>document.write(new Date().getFullYear())</script> ChicnChill. Crafted with by ChicnChill
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </section>
     </div>
 @stop

@@ -5,33 +5,7 @@
             <div class="d-flex">
                 <!-- LOGO -->
                 <div class="navbar-brand-box horizontal-logo">
-                    <a href="/admin" class="logo logo-dark">
-                        <span class="logo-sm">
-                            <img src="{{ url('assets/images/chicnchill-logo-light.png') }}" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="{{ url('assets/images/chicnchill-logo.png') }}" alt="" height="25">
-                        </span>
-                    </a>
-
-                    <a href="/admin" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="{{ url('assets/images/chicnchill-logo-light.png') }}" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="{{ url('assets/images/chicnchill-logo.png') }}" alt="" height="25">
-                        </span>
-                    </a>
                 </div>
-
-                <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
-                        id="topnav-hamburger-icon">
-                    <span class="hamburger-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
             </div>
 
             <div class="d-flex align-items-center">
