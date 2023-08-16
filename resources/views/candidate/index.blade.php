@@ -17,8 +17,8 @@
                         <input name="excel_file" type="file" class="form-control" required>
                         <button class="btn btn-primary me-2" style="text-wrap: nowrap;">Import Excel</button>
                     </form>
-                    <a class="btn btn-primary me-2" href="{{ route('admin.candidate.create') }}">File excel mẫu</a>
-                    <a class="btn btn-primary me-2" href="{{ route('admin.candidate.create') }}">Export excel</a>
+                    <a class="btn btn-primary me-2" href="/template_candidate/import_candidate_template.xlsx">File excel mẫu</a>
+                    <a class="btn btn-primary me-2" href="{{ route('admin.candidate.export_excel') }}">Export excel</a>
                 </div>
             </div>
             <div class="data-content mt-3">

@@ -11,6 +11,7 @@ use App\Enums\InterviewResultEnum;
 use App\Enums\LevelEnum;
 use App\Enums\RankEnum;
 use App\Http\Controllers\Controller;
+use App\Models\Candidate;
 use App\Repositories\CandidateRepository;
 use App\Repositories\DepartmentRepository;
 use App\Repositories\PositionRepository;
@@ -149,12 +150,6 @@ class CandidateController extends Controller
                 $interviewer2 = StringHelpers::getSelectOptions($users, $data->interviewer2);
                 $interviewer3 = StringHelpers::getSelectOptions($users, $data->interviewer3);
 
-                // $interviewer = StringHelpers::getSelectOptions($users, $data->interviewer);
-                // $interviewer0 = StringHelpers::getSelectOptions($users, $data->interviewer0);
-                // $interviewer1 = StringHelpers::getSelectOptions($users, $data->interviewer1);
-                // $interviewer2 = StringHelpers::getSelectOptions($users, $data->interviewer2);
-                // $interviewer3 = StringHelpers::getSelectOptions($users, $data->interviewer3);
-
                 $interviewResults = StringHelpers::getSelectEnumOptions(InterviewResultEnum::cases());
                 return view('candidate.edit', compact('data', 'interviewResults', 'address', 'household', 'users', 'genders', 'sources', 'positions', 'departments', 'provinces', 'levels', 'branchs', 'ranks', 'receiver', 'interviewer', 'interviewer0', 'interviewer1', 'interviewer2', 'interviewer3'));
             } else {
@@ -274,6 +269,62 @@ class CandidateController extends Controller
 
             return redirect()->route('admin.candidate.index')->with('success', 'Thành công');
         }
+    }
+
+    public function exportExcel()
+    {
+        $candidates = Candidate::all();
+
+        $data = [];
+        foreach ($candidates as $key => $candidate) {
+            array_push($data, [
+                'STT' => ++$key,
+                'HỌ VÀ TÊN ỨNG VIÊN' => $candidate->name,
+                'NGÀY SINH' => $candidate->birthday,
+                'VỊ TRÍ ỨNG TUYỂN' => $candidate->position?->name,
+                'ĐƠN VỊ' => $candidate->department?->name,
+                'NGÀY NHẬN HỒ SƠ' => date('d/m/Y', strtotime($candidate->received_time)),
+                'NGƯỜI NHẬN HỒ SƠ' => $candidate->receive?->name,
+                'NGUỒN HỒ SƠ' => $candidate->source?->name,
+                'GHI CHÚ MỐI QUAN HỆ' => $candidate->relationship_note,
+                'GIỚI TÍNH' => $candidate->gender,
+                'ĐIỆN THOẠI' => $candidate->phone_number,
+                'EMAIL' => $candidate->email,
+                'HỘ KHẨU' => $candidate->households?->name,
+                'NƠI Ở HIỆN TẠI' => $candidate->addresses?->name,
+                'NƠI Ở (CHI TIẾT)' => $candidate->address_detail,
+                'TRÌNH ĐỘ' => $candidate->level,
+                'HỆ' => $candidate->branch,
+                'CHUYÊN NGÀNH HỌC' => $candidate->major,
+                'TRƯỜNG ĐÀO TẠO' => $candidate->training_place,
+                'XẾP LOẠI' => $candidate->rank,
+                'TIẾNG ANH' => $candidate->english,
+                'NGOẠI NGỮ KHÁC' => $candidate->other_language,
+                'PHẦN MỀM KHÁC' => $candidate->other_software,
+                'THÔNG TIN THAM CHIẾU 1' => $candidate->info1,
+                'THÔNG TIN THAM CHIẾU 2' => $candidate->info2,
+                'KINH NGHIỆM LÀM VIỆC' => $candidate->experience,
+                'NGƯỜI SLHS' => $candidate->interviewer,
+                'NGÀY SLHS' => $candidate->interview_date,
+                'NHẬN XÉT SLHS' => $candidate->interview_comment,
+                'NGƯỜI PVSB' => $candidate->interviewer0,
+                'NGÀY PVSB' => $candidate->interview_date0,
+                'NHẬN XÉT PVSB' => $candidate->interview_comment0,
+                'NGƯỜI PVV1' => $candidate->interviewer1,
+                'NGÀY PVV1' => $candidate->interview_date1,
+                'NHẬN XÉT PVV1' => $candidate->interview_comment1,
+                'NGƯỜI PVV2' => $candidate->interviewer2,
+                'NGÀY PVV2' => $candidate->interview_date2,
+                'NHẬN XÉT PVV2' => $candidate->interview_comment2,
+                'NGƯỜI PVV3' => $candidate->interviewer,
+                'NGÀY PVV3' => $candidate->interview_date,
+                'NHẬN XÉT PVV3' => $candidate->interview_comment,
+                'ĐIỂM THI TUYỂN' => $candidate->score,
+                'Trạng thái' => $candidate->status_value,
+            ]);
+        }
+        $list = collect($data);
+        return (new FastExcel($list))->download('Candidates.xlsx');
     }
 
     /**

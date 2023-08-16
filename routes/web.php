@@ -89,6 +89,7 @@ Route::group(['middleware' => ['web', 'auth.login']], function ()
 	Route::post('/candidate/update/{id}', [CandidateController::class, 'update'])->name('admin.candidate.update');
 	Route::delete('/candidate/destroy/{id}', [CandidateController::class, 'destroy'])->name('admin.candidate.destroy');
     Route::post('/candidate/import-excel', [CandidateController::class, 'importExcel'])->name('admin.candidate.import_excel');
+    Route::get('/candidate/export-excel', [CandidateController::class, 'exportExcel'])->name('admin.candidate.export_excel');
 
 	//Auth
 	Route::get('/logout', [LoginController::class, 'logout'])->name('auth.get.logout');
