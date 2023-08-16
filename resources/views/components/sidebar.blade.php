@@ -32,6 +32,24 @@
                         <span data-key="t-overview">Danh sách vị trí</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{$routeName == 'admin.source.index' ? 'active' : ''}}" href="{{ route('admin.source.index') }}">
+                        {{-- <i class="bi bi-person-bounding-box customer-icon"></i> --}}
+                        <span data-key="t-overview">Nguồn tuyển dụng</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{$routeName == 'admin.candidate.index' ? 'active' : ''}}" href="{{ route('admin.candidate.index') }}">
+                        {{-- <i class="bi bi-person-bounding-box customer-icon"></i> --}}
+                        <span data-key="t-overview">Danh sách ứng tuyển</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{$routeName == 'admin.role.index' ? 'active' : ''}}" href="{{ route('admin.role.index') }}">
+                        {{-- <i class="bi bi-person-bounding-box customer-icon"></i> --}}
+                        <span data-key="t-overview">Vai trò</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

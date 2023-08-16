@@ -22,7 +22,6 @@ class CandidateRepository extends AbstractRepository
     {
         return $rules = [
             'name' => 'required',
-            'user_uid' => 'unique:candidate',
             'birthday' => 'required|before:today',
             'department_id' => 'required',
             'position_id' => 'required',
@@ -40,14 +39,12 @@ class CandidateRepository extends AbstractRepository
             'branch' => 'required',
             'major' => 'required',
             'training_place' => 'required',
-            'request_form_id' => 'required',
         ];
     }
     public function validateUpdate($id)
     {
         return $rules = [
             'name' => 'required',
-            'user_uid' => 'unique:candidate,user_uid,' . $id . ',id',
             'birthday' => 'required|before:today',
             'department_id' => 'required',
             'position_id' => 'required',
@@ -65,7 +62,6 @@ class CandidateRepository extends AbstractRepository
             'branch' => 'required',
             'major' => 'required',
             'training_place' => 'required',
-            'request_form_id' => 'required',
         ];
     }
     public function countByStatus()

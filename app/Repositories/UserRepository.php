@@ -21,10 +21,10 @@ class UserRepository extends AbstractRepository
     {
         return $rules = [
             'name' => 'required',
-            'email' => 'email|required|unique:user',
+            'email' => 'email|required',
             'gender' => 'required',
             'birthday' => 'required|before:today|after:01/01/1990',
-            'username' => 'required|unique:user',
+            'username' => 'required|unique:users',
             'password' => 'required|min:6|max:32',
             'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'department_id' => 'required',
@@ -35,8 +35,7 @@ class UserRepository extends AbstractRepository
     {
         return $rules = [
             'name' => 'required',
-            'email' => 'email|required|unique:user,email,' . $id . ',id',
-            'username' => 'required|unique:user,username,' . $id . ',id',
+            'email' => 'email|required',
             'gender' => 'required',
             'birthday' => 'required|before:today',
             'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',

@@ -35,7 +35,7 @@ class StringHelpers
     {
         $html = '<option></option>';
         foreach ($options as $option) {
-            $html .= '<option value="' . $option->code . '"' . ((is_array($selected) ? in_array($option->code, $selected) : $selected == $option->code) ? 'selected' : '') . '>' . $option->name . '</option>';
+            $html .= '<option value="' . $option->id . '"' . ((is_array($selected) ? in_array($option->id, $selected) : $selected == $option->id) ? 'selected' : '') . '>' . $option->name . '</option>';
         }
         return $html;
     }
