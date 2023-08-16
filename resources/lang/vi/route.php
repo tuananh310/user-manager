@@ -59,6 +59,7 @@ return [
     'admin.candidate.create' => 'Tạo ứng viên',
     'admin.candidate.get_data' => 'Danh sách ứng viên',
     'admin.candidate.import_excel' => 'Import excel',
+    'admin.candidate.export_excel' => 'Export excel',
     'admin.candidate.edit' => 'Sửa ứng viên',
     'admin.candidate.store' => 'Thêm ứng viên',
     'admin.candidate.update' => 'Cập nhật ứng viên',
