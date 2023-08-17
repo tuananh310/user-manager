@@ -67,7 +67,7 @@ return [
     'admin.candidate.destroy' => 'Xóa ứng viên',
 
     // Quản lý vai trò
-    'admin.role.index' => 'Danh sách vai trò',
+    'admin.role.index' => 'Vai trò',
     'admin.role.create' => 'Tạo vai trò',
     'admin.role.edit' => 'Xem vai trò',
     'admin.role.store' => 'Thêm vai trò',

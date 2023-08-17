@@ -10,7 +10,7 @@
             <h4>Chỉnh sửa mới quyền</h4>
         </div>
         <div class="row justify-content-start">
-            <div class="col-lg-12">
+            <div class="col-lg-8">
                 <div class="card">
                     <form class="d-flex" method="POST" action="{{ route('admin.role.update', $data->id) }}"
                         enctype="multipart/form-data">
@@ -30,15 +30,15 @@
                                 </label>
                                 <textarea name="description" class="form-control" id="ckeditor" rows="3" placeholder="Nhập mô tả">{{ old('description') ?? $data->description }}</textarea>
                             </div>
-                            <div class="row">
+                            <div class="row pt-3">
                                 @foreach ($routeGroups as $groupKey => $routes)
-                                    <div class="col-4">
-                                        <div class="mb-2 d-flex align-items-center">
-                                            <h3 class="mb-0">{{ __('route.' . $groupKey) }}</h3>
+                                    <div class="col-12 row mb-3 ms-1 border-bottom">
+                                        <div class="mb-3 d-flex align-items-start col-4">
+                                            <h4 class="mb-0">{{ __('route.' . $groupKey) }}</h4>
                                         </div>
-                                        <ul class="list-unstyled">
+                                        <div class="col-8 d-flex flex-wrap">
                                             @foreach ($routes as $routeName)
-                                                <li class="form-check">
+                                                <div class="me-3 mb-3">
                                                     @if (in_array($routeName, $permisions))
                                                         <input type="checkbox" checked name="selected_routes[]"
                                                             value="{{ $routeName }}" id="{{ $routeName }}"
@@ -50,9 +50,9 @@
                                                     @endif
                                                     <label for="{{ $routeName }}"
                                                         class="form-check-label">{{ __('route.' . $routeName) }}</label>
-                                                </li>
+                                                </div>
                                             @endforeach
-                                        </ul>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
