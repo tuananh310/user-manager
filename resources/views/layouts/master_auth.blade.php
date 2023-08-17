@@ -3,10 +3,10 @@
       data-sidebar-image="none" data-preloader="disable" data-body-image="none">
 <head>
     <meta charset="utf-8">
-    <title>ChicnChill</title>
+    <title>Nhựa Tiền Phong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Dashboard Admin HTML Template" name="description">
-    <meta content="ChicnChill" name="author">
+    <meta content="Nhựa Tiền Phong" name="author">
     <link rel="icon" type="image/x-icon" href="{{ url('favicon.png') }}">
     <link rel="stylesheet" href="{{ mix('css/bootstrap.css', "statics/assets") }}">
     <link rel="stylesheet" href="{{ mix('css/icons.css', "statics/assets") }}">
