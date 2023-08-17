@@ -25,9 +25,6 @@ Route::get('/', function ()
 	{
 		return redirect()->route('info.get');
 	});
-// Form Info
-Route::get('/ThailandMartech2023', [CustomerController::class, 'index'])->name('info.get');
-Route::post('/customer-store', [CustomerController::class, 'store'])->name('customer.store');
 
 //Auth
 Route::get('/login', [LoginController::class, 'login'])->name('auth.get.login');
